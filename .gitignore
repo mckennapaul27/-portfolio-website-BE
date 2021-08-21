@@ -112,3 +112,11 @@ exports
 *.cache
 build
 .strapi-updater.json
+
+
+############################
+# Strapi recommends to not include packagelock.json
+############################
+
+package-lock.json
+
