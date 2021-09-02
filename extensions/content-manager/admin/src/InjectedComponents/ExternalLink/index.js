@@ -45,14 +45,6 @@ const ExternalLink = ({ env }) => {
     if (!modifiedData.slug) {
         return null;
     }
-    console.log(`process.env.NODE_ENV: ${process.env.NODE_ENV}`);
-    console.log(`modifiedData: ${modifiedData.slug}`);
-
-    const CLIENT_PREVIEW_SECRET = process.env.CLIENT_PREVIEW_SECRET;
-    const CLIENT_URL = process.env.CLIENT_URL;
-
-    console.log(`CLIENT_URL: ${CLIENT_URL}`);
-    console.log(`CLIENT_PREVIEW_SECRET: ${CLIENT_PREVIEW_SECRET}`);
 
     if (!CLIENT_URL || !CLIENT_PREVIEW_SECRET) {
         return null;
