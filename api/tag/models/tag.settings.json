@@ -19,6 +19,11 @@
       "via": "tags",
       "collection": "blog",
       "dominant": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
     }
   }
 }
