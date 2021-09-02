@@ -50,7 +50,7 @@ const ExternalLink = ({ env }) => {
     console.log(`modifiedData: ${modifiedData}`);
 
     const CLIENT_PREVIEW_SECRET = process.env.CLIENT_PREVIEW_SECRET;
-    const CLIENT_URL = process.env.CLIENT_URL;
+    const CLIENT_URL = process.env.CLIENT_URL; //
 
     console.log(`CLIENT_URL: ${CLIENT_URL}`);
     console.log(`CLIENT_PREVIEW_SECRET: ${CLIENT_PREVIEW_SECRET}`);
