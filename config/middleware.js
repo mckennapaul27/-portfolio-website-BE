@@ -10,6 +10,7 @@ module.exports = {
                 'https://mysite.com',
                 'https://www.mysite.com',
                 'https://www.keeny.codes',
+                'https://keeny.codes',
             ],
         },
     },
