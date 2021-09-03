@@ -9,6 +9,7 @@ module.exports = {
                 'https://portfolio-admin-cms.herokuapp.com',
                 'https://mysite.com',
                 'https://www.mysite.com',
+                'https://www.keeny.codes',
             ],
         },
     },
