@@ -1,0 +1,20 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/contacts/newsletter",
+            "handler": "Contact.newsletter",
+            "config": {
+                "policies": []
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/contacts/send",
+            "handler": "Contact.send",
+            "config": {
+                "policies": []
+            }
+        }
+    ]
+}

@@ -11,6 +11,8 @@ module.exports = {
                 'https://www.mysite.com',
                 'https://www.keeny.codes',
                 'https://keeny.codes',
+                'https://www.mckenna.codes',
+                'https://mckenna.codes',
             ],
         },
     },
