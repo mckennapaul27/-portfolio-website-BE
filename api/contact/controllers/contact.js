@@ -18,7 +18,6 @@ const createNewContact = async ({ email, listIds, attributes }) => {
         const res = await apiInstance.createContact(createContact);
         return res;
     } catch (err) {
-        console.log(err.response);
         const { status } = err.response.error;
         return status;
     }
@@ -40,10 +39,8 @@ const sendEmail = async ({ templateId, smtpParams, tags, email, replyTo }) => {
     };
     try {
         const res = await apiInstance.sendTransacEmail(sendSmtpEmail);
-        console.log(res);
         return res;
     } catch (err) {
-        console.log(err.response.error);
         const { status } = err.response.error;
         return status;
     }
@@ -75,13 +72,11 @@ const sendNodemailerEmail = async ({ smtpParams, email }) => {
 module.exports = {
     async newsletter(ctx) {
         const { email } = ctx.request.body;
-        console.log(ctx);
         const result = await createNewContact({
             email,
             listIds: [18],
             attributes: {},
         });
-        console.log(result);
         if (result === 400)
             return ctx.send({
                 status: 400,
@@ -94,34 +89,30 @@ module.exports = {
     },
 
     async send(ctx) {
-        console.log(ctx);
         const { email, name, phone, message } = ctx.request.body;
         try {
-            const a = await createNewContact({
+            await createNewContact({
                 email,
                 listIds: [18],
                 attributes: { NAME: name, PHONE: phone },
             });
-            console.log('<<<a>>>: ', a);
-            const b = await sendEmail({
+            await sendEmail({
                 templateId: 82,
                 smtpParams: { message, name, phone },
                 email: email,
                 replyTo: { email: 'hello@mckenna.codes' }, // have to put in obj
                 tags: [],
             });
-            console.log('<<<b>>>: ', b);
-            const c = await sendNodemailerEmail({
+            await sendNodemailerEmail({
                 smtpParams: { message, name, phone },
                 email: email,
             });
-            console.log('<<<c>>>: ', c);
             return ctx.send({
                 status: 200,
                 msg: 'I have received your enquiry and will respond ASAP 😁',
             });
         } catch (error) {
-            console.log(error);
+            return error;
         }
     },
 };
