@@ -82,11 +82,11 @@ module.exports = {
         if (result === 400)
             return ctx.send({
                 status: 400,
-                msg: 'You have already subscribed to our newsletter',
+                msg: 'You have already subscribed to our newsletter.',
             });
         return ctx.send({
             status: 201,
-            msg: 'Thank you for subscribing to my newsletter',
+            msg: 'Thank you for subscribing to my newsletter.',
         });
     },
 
@@ -110,7 +110,7 @@ module.exports = {
         });
         return ctx.send({
             status: 200,
-            msg: 'I have received your enquiry and will respond ASAP',
+            msg: 'I have received your enquiry and will respond ASAP 😁',
         });
     },
 };
