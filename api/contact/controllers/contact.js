@@ -8,7 +8,7 @@ let apiKey = defaultClient.authentications['api-key'];
 apiKey.apiKey = process.env.STRAPI_API_KEY;
 
 // create new contact by passing email
-const createNewContact = async ({ email, listIds, attributes = {} }) => {
+const createNewContact = async ({ email, listIds, attributes }) => {
     const apiInstance = new SibApiV3Sdk.ContactsApi();
     let createContact = new SibApiV3Sdk.CreateContact();
     createContact.email = email;
@@ -18,6 +18,7 @@ const createNewContact = async ({ email, listIds, attributes = {} }) => {
         const res = await apiInstance.createContact(createContact);
         return res;
     } catch (err) {
+        console.log(err.response);
         const { status } = err.response.error;
         return status;
     }
