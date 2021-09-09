@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "skills",
+  "collectionName": "skill_types",
   "info": {
-    "name": "skill",
+    "name": "skillType",
     "description": ""
   },
   "options": {
@@ -14,9 +14,6 @@
   "attributes": {
     "name": {
       "type": "string"
-    },
-    "skill_type": {
-      "model": "skill-type"
     }
   }
 }
